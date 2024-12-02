@@ -6,12 +6,14 @@ namespace APILayer.Models.Entities
         public required string UserId { get; set; }
         public required string Email { get; set;}
         public string? Username { get; set;}
-        public string? Password { get; set;}
+        public string? HashedPassword { get; set;}
         public string? FullName { get; set;}
         public string Role { get; set; } = "Customer"; // Provider, Admin
         public string? Provider { get; set; }
         public DateTime CreateAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public DateTime? LastLogin { get; set; }
+        public bool IsActive { get; set; } = true;
 
         // Relationships
         public ICollection<Payment>? Payments { get; set; }
